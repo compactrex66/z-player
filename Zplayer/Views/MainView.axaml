@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Zplayer.ViewModels"
+             xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             mc:Ignorable="d" Width="400" Height="650"
+             x:Class="Zplayer.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+  <StackPanel Orientation="Vertical" Margin="20">
+    <StackPanel Orientation="Horizontal">
+      <Image Source="/Assets/cover.jpg" Stretch="Fill" Width="350" Name="cover"></Image>
+    </StackPanel>
+    <StackPanel Orientation="Vertical">
+      <StackPanel Orientation="Horizontal" Margin="0 10 0 0" >
+        <TextBlock FontSize="35" Name="title">- - -</TextBlock>
+        <Button Theme="{StaticResource MaterialOutlineButton}" Content="Otwórz" Click="OpenFile" Margin="10 0 0 0" />
+      </StackPanel>
+      <TextBlock Margin="0 10 0 0" Name="author">- - -</TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 50 0 30">
+      <controls:FloatingButton Classes="Mini" ><Image Source="/Assets/previousIcon.png"></Image></controls:FloatingButton>
+      <controls:FloatingButton Margin="20 0" Click="toggleSongState"><Image Source="/Assets/playIcon.ico"></Image></controls:FloatingButton>
+      <controls:FloatingButton Classes="Mini" ><Image Source="/Assets/nextIcon.png"></Image></controls:FloatingButton>
+    </StackPanel>
+    <StackPanel>
+      <Slider Name="Slider" IsSnapToTickEnabled="True" TickFrequency="1" />
+    </StackPanel>
+    <StackPanel HorizontalAlignment="Center" Margin="0 10 0 0">
+      <TextBlock>0:00 / 2:37</TextBlock>
+    </StackPanel>
+  </StackPanel>
+</UserControl>
