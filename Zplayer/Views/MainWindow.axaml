@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:Zplayer.Views"
-        mc:Ignorable="d" Width="470" Height="650"
+        mc:Ignorable="d" Width="600" Height="650"
         x:Class="Zplayer.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="Zplayer">
